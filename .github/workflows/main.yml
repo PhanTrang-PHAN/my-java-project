@@ -33,7 +33,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       
-      # 👉 THÊM BƯỚC NÀY VÀO ĐÂY (sau cache, trước build)
       - name: Setup Maven mirror for faster downloads
         run: |
           mkdir -p ~/.m2
@@ -49,7 +48,8 @@ jobs:
             </mirrors>
           </settings>
           EOF
-     mvm -version     echo "✅ Configured Aliyun mirror for faster downloads"
+          mvn -version
+          echo "✅ Configured Aliyun mirror for faster downloads"
       
       - name: Build and analyze
         env:
