@@ -19,7 +19,7 @@ public class Calculator {
         if (b == 0) throw new IllegalArgumentException("Divisor cannot be zero");
         return a / b;
     }
-
+// test 
     public boolean isPrime(int n) {
         if (n <= 1) return false;
         for (int i = 2; i <= Math.sqrt(n); i++) {
